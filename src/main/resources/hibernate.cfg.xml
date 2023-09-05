@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE hibernate-configuration PUBLIC
+        "-//Hibernate/Hibernate Configuration DTD 3.0//EN"
+        "http://www.hibernate.org/dtd/hibernate-configuration-3.0.dtd">
+<hibernate-configuration>
+    <session-factory>
+        <!-- JDBC Database connection settings -->
+       <!-- <property name="connection.driver_class">com.mysql.cj.jdbc.Driver</property>-->
+        <property name="connection.driver_class">com.mysql.cj.jdbc.Driver</property>
+        <property name="connection.url">jdbc:mysql://localhost:3306/firstproject?useSSL=false</property>
+        <property name="connection.username">root</property>
+        <property name="connection.password">root</property>
+        <!-- JDBC connection pool settings ... using built-in test pool -->
+        <property name="connection.pool_size">100</property>
+        <!-- Echo the SQL to stdout -->
+        <property name="show_sql">true</property>
+        <!-- Select our SQL dialect -->
+        <property name="dialect">org.hibernate.dialect.MySQL5Dialect</property>
+        <!--*** to apply load and proxy getting ***-->
+        <property name="hibernate.enable_lazy_load_no_trans">true</property>
+        <!-- Drop and re-create or update the database schema on startup -->
+        <property name="hbm2ddl.auto">update</property>
+        <!--*** using second level cache ***-->
+        <property name="cache.use_second_level_cache">true</property>
+        <property name="hibernate.cache.region.factory_class">org.hibernate.cache.ehcache.EhCacheRegionFactory</property>
+        <property name="hibernate.cache.use_query_cache">true</property>
+        
+        <!--*** name of annotated entity class ***-->
+        <!--mapping class="org.example.Alien"/-->
+        <mapping class="org.example.Userdetails"/>
+        <!--mapping class="org.example.Vehicle"/>
+        <mapping class="org.example.FourWheeler"/>
+        <mapping class="org.example.TwoWheeler"/-->
+         </session-factory>
+</hibernate-configuration>
